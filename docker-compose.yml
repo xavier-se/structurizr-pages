@@ -1,0 +1,10 @@
+version: "2.1"
+services:
+  code-server:
+    image: ghcr.io/avisi-cloud/structurizr-site-generatr
+    volumes:
+      - ./structurizr:/var/model
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    command: ["serve", "-w", "workspace.dsl"]
